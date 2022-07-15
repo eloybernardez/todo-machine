@@ -2,9 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledH2 = styled.h2`
+  text-align: center;
   font-size: 3rem;
   font-weight: bold;
-  color: orange;
+  color: #ffc107;
+
+  @media (max-width: 700px) {
+    padding: 1rem;
+  }
 `;
 
 const TodoCounter = () => {

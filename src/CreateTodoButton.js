@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  width: 4rem;
-  height: 4rem;
-  font-size: 1.3rem;
+  width: 5rem;
+  height: 5rem;
+  font-size: 4rem;
   border-radius: 50%;
   background-color: orange;
   border: none;
   color: black;
+  padding: 0.4rem 1rem 2.3rem;
   justify-self: flex-end;
   align-self: flex-end;
   margin-right: 1rem;
@@ -21,7 +22,15 @@ const StyledButton = styled.button`
 `;
 
 const CreateTodoButton = (props) => {
-  return <StyledButton>+</StyledButton>;
+  const onClickButton = (msg) => {
+    alert(msg);
+  };
+
+  return (
+    <StyledButton onClick={() => onClickButton("Aquí debería ir el modal")}>
+      +
+    </StyledButton>
+  );
 };
 
 export { CreateTodoButton };

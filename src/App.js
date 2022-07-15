@@ -13,9 +13,10 @@ import styled from "styled-components";
 }
 
 const todos = [
-  { text: "Cortar cebolla", completed: false },
+  { text: "Cortar cebolla", completed: true },
   { text: "Tomar el curso de intro a React", completed: false },
   { text: "Llorar con la llorona", completed: false },
+  { text: "Darle una buena patada al Boby", completed: true },
 ];
 const StyledMain = styled.main`
   display: flex;
@@ -25,6 +26,10 @@ const StyledMain = styled.main`
   margin: 0 auto;
   background-color: rgb(40, 42, 62);
   border-radius: 1.3rem;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 function App() {
@@ -37,7 +42,11 @@ function App() {
 
       <TodoList>
         {todos.map((todo) => (
-          <TodoItem key={todo.text} text={todo.text} />
+          <TodoItem
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+          />
         ))}
       </TodoList>
 
