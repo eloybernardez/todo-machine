@@ -6,28 +6,32 @@ const StyledButton = styled.button`
   height: 5rem;
   font-size: 4rem;
   border-radius: 50%;
-  background-color: orange;
+  background-color: #16c60c;
   border: none;
-  color: black;
+  color: white;
   padding: 0.4rem 1rem 2.3rem;
   justify-self: flex-end;
   align-self: flex-end;
   margin-right: 1rem;
   margin-bottom: 1rem;
+  transition: transform 1s;
+
+  transform: ${(props) => (props.openModal ? "rotateZ(135deg)" : "inherit")};
+  background-color: ${(props) => (props.openModal ? "#f03a17" : "#16c60c")};
 
   &:hover {
-    background-color: #ffc107;
-    color: white;
+    background-color: #69e962;
   }
 `;
 
 const CreateTodoButton = (props) => {
-  const onClickButton = (msg) => {
-    alert(msg);
+  const onClickButton = () => {
+    props.setOpenModal((prevState) => !prevState);
+    // saveTodos([...todos, { text: newTodo, completed: false }]);
   };
 
   return (
-    <StyledButton onClick={() => onClickButton("Aquí debería ir el modal")}>
+    <StyledButton openModal={props.openModal} onClick={onClickButton}>
       +
     </StyledButton>
   );

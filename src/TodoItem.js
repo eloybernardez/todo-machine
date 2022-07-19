@@ -11,9 +11,8 @@ const StyledItem = styled.li`
 `;
 
 const StyledChecked = styled.span`
-  background-color: ${(props) => (props.completed ? "#ffc107" : "red")}
   color: black;
-  cursor:pointer;
+  cursor: pointer;
   padding: 0.5rem;
   border-radius: 1rem;
   font-weight: bold;
@@ -30,38 +29,25 @@ const StyledDelete = styled.span`
   cursor: pointer;
   padding: 1.2rem;
   font-weight: bold;
-
-  &:hover {
-    color: #ffc107;
-  }
 `;
 
 const TodoItem = (props) => {
-  const [completed, setCompleted] = React.useState(props.completed);
-
-  const onComplete = () => {
-    setCompleted(!completed);
-    alert("Ya completaste el todo" + " " + props.text);
-  };
-
-  const onDelete = () => {
-    setCompleted(!completed);
-    alert("Borraste el todo" + " " + props.text);
-  };
   return (
     <StyledItem>
       <StyledChecked
-        completed={completed}
+        completed={props.todo.completed}
         onClick={() => {
-          if (completed === false) return onComplete();
+          props.onComplete();
         }}
       >
-        {completed ? "✅" : "⏱"}
+        {props.todo.completed ? "✅" : "⏱"}
       </StyledChecked>
-      <StyledText completed={completed}>{props.text}</StyledText>
+      <StyledText completed={props.todo.completed}>
+        {props.todo.text}
+      </StyledText>
       <StyledDelete
         onClick={() => {
-          if (completed === true) return onDelete();
+          props.onDelete();
         }}
       >
         ❌
