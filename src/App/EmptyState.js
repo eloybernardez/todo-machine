@@ -31,6 +31,7 @@ const StyledContainer = styled.div`
   width: 80%;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1rem;
 `;
 
 const StyledH3 = styled.h3`

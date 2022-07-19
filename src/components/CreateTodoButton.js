@@ -6,6 +6,7 @@ const StyledButton = styled.button`
   height: 5rem;
   font-size: 4rem;
   border-radius: 50%;
+  cursor: pointer;
   background-color: #16c60c;
   border: none;
   color: white;
@@ -20,7 +21,7 @@ const StyledButton = styled.button`
   background-color: ${(props) => (props.openModal ? "#f03a17" : "#16c60c")};
 
   &:hover {
-    background-color: #69e962;
+    background-color: ${(props) => (props.openModal ? "#f03a40" : "#69e962")};
   }
 `;
 

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import styled from "styled-components";
 
 const StyledModal = styled.div`
-  background-color: #2d3047;
+  background-color: #14213d;
   color: white;
   display: flex;
   justify-content: center;

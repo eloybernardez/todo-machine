@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { TodoIconCompleted } from "./TodoIconCompleted";
+import { TodoIconDelete } from "./TodoIconDelete";
+import { TodoIconToDo } from "./TodoIconToDo";
 
 const StyledItem = styled.li`
   display: flex;
@@ -8,6 +11,11 @@ const StyledItem = styled.li`
   color: black;
   font-weight: 400;
   padding: 1rem;
+  border-bottom: 0.1rem solid #14213d;
+
+  &:last-child {
+    border: none;
+  }
 `;
 
 const StyledChecked = styled.span`
@@ -40,7 +48,7 @@ const TodoItem = (props) => {
           props.onComplete();
         }}
       >
-        {props.todo.completed ? "✅" : "⏱"}
+        {props.todo.completed ? <TodoIconCompleted /> : <TodoIconToDo />}
       </StyledChecked>
       <StyledText completed={props.todo.completed}>
         {props.todo.text}
@@ -50,7 +58,7 @@ const TodoItem = (props) => {
           props.onDelete();
         }}
       >
-        ❌
+        <TodoIconDelete />
       </StyledDelete>
     </StyledItem>
   );

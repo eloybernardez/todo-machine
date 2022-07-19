@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { TodoContext } from "./context/Context";
+import { TodoContext } from "../context/Context";
 
 const StyledForm = styled.form`
   display: flex;
@@ -12,7 +12,7 @@ const StyledForm = styled.form`
 
 const StyledLabel = styled.label`
   width: 100%;
-  color: white;
+  color: #ffffff;
   text-align: center;
   font-weight: bold;
   font-size: 2.5rem;
@@ -26,11 +26,11 @@ const StyledTextarea = styled.textarea`
   outline: none;
   border: none;
   border-radius: 0.8rem;
-  margin: 1.5rem auto;
+  margin: 1rem auto;
   font-size: 1.6rem;
 
   &:focus {
-    outline: 0.2rem solid #fa8334;
+    outline: 0.2rem solid #fca311;
   }
 `;
 
@@ -46,6 +46,7 @@ const StyledButton = styled.button`
   border-radius: 0.8rem;
   border: none;
   font-weight: bold;
+  cursor: pointer;
 `;
 
 function TodoForm() {

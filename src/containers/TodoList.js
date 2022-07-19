@@ -6,7 +6,7 @@ const StyledUl = styled.ul`
   padding: 0;
   list-style: none;
   border-radius: 1.3rem;
-  background-color: #edeef0;
+  background-color: #e5e5e5;
   color: white;
 `;
 

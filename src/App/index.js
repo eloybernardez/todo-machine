@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { AppUI } from "./AppUI";
 import { TodoProvider } from "../context/Context";
-import { GlobalStyle } from "../GlobalStyle";
+import { GlobalStyle } from "../styles/GlobalStyle";
 
 {
   /* a las components les pasamos PROPIEDADES (PROPS), no parametros. Los atributos que les damos a las etiquetas de HTML no pueden modificarse pero las propiedades sí*/
@@ -15,7 +15,7 @@ const StyledMain = styled.main`
   flex-direction: column;
   width: 50%;
   margin: 0 auto;
-  background-color: #2d3047;
+  background-color: #14213d;
   border-radius: 1.3rem;
 
   @media (max-width: 700px) {

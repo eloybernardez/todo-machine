@@ -1,5 +1,5 @@
 import React from "react";
-import { LoadingItem } from "../LoadingItem";
+import { LoadingItem } from "../components/LoadingItem";
 
 function LoadingState() {
   return (

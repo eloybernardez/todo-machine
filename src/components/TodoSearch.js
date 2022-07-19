@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { TodoContext } from "./context/Context";
+import { TodoContext } from "../context/Context";
 
 const StyledInput = styled.input`
   width: 20rem;
   height: 3rem;
   padding-left: 0.8rem;
   border-radius: 0.8rem;
+  border: none;
 
   &:focus {
-    outline: 0.2rem solid #ff9b71;
+    outline: 0.2rem solid #fca311;
   }
 `;
 

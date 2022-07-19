@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const StyledItem = styled.li`
   display: flex;
@@ -10,17 +10,33 @@ const StyledItem = styled.li`
   opacity: 0.3;
 `;
 
+const swap = keyframes`
+ 0% {
+  background-color:grey;
+ }
+
+ 50%{
+  background-color:lightgrey;
+ }
+
+ 100%{
+  background-color: grey;
+ }
+`;
+
 const StyledDiv = styled.div`
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
   background-color: grey;
+  animation: ${swap} 1.5s linear infinite;
 `;
 
 const StyledText = styled.div`
   width: 30rem;
   height: 2rem;
   background-color: grey;
+  animation: ${swap} 1.5s linear infinite;
 `;
 
 function LoadingItem() {
