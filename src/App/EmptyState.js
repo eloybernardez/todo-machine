@@ -19,8 +19,7 @@ const StyledButton = styled.button`
   background-color: #16c60c;
   border: none;
   color: white;
-  padding-top: 0.35rem;
-  justify-self: flex-end;
+  padding: 0;
   align-self: flex-end;
   margin-right: 1rem;
   margin-bottom: 1rem;
