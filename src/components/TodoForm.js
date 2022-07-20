@@ -40,7 +40,7 @@ const StyledButtonContainer = styled.div`
 `;
 
 const StyledButton = styled.button`
-  padding: 1rem 2.6rem;
+  padding: 1rem;
   background-color: ${(props) => (props.primary ? "#16c60c" : "#f03a17")};
   color: white;
   width: 45%;
