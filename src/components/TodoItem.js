@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { TodoIconCompleted } from "./TodoIconCompleted";
-import { TodoIconDelete } from "./TodoIconDelete";
-import { TodoIconToDo } from "./TodoIconToDo";
+import { TodoIcon } from "./TodoIcon";
 
 const StyledItem = styled.li`
   display: flex;
@@ -48,7 +46,11 @@ const TodoItem = (props) => {
           props.onComplete();
         }}
       >
-        {props.todo.completed ? <TodoIconCompleted /> : <TodoIconToDo />}
+        {props.todo.completed ? (
+          <TodoIcon text="completed" />
+        ) : (
+          <TodoIcon text="unfinished" />
+        )}
       </StyledChecked>
       <StyledText completed={props.todo.completed}>
         {props.todo.text}
@@ -58,7 +60,7 @@ const TodoItem = (props) => {
           props.onDelete();
         }}
       >
-        <TodoIconDelete />
+        <TodoIcon text="deleted" />
       </StyledDelete>
     </StyledItem>
   );

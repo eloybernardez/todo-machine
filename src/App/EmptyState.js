@@ -40,7 +40,7 @@ function EmptyState() {
     <StyledDiv>
       <FontAwesomeIcon
         icon={faFolderPlus}
-        transform="down-3"
+        transform="down-1"
         size="5x"
         color="#16c60c"
       />

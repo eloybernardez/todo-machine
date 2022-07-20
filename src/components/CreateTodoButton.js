@@ -3,7 +3,7 @@ import { TodoContext } from "../context/Context";
 import { AddButton } from "./AddButton";
 
 const CreateTodoButton = () => {
-  const { openModal, setOpenModal } = React.useContext(TodoContext);
+  const { setOpenModal } = React.useContext(TodoContext);
 
   const onClickButton = () => {
     setOpenModal((prevState) => !prevState);
@@ -11,7 +11,6 @@ const CreateTodoButton = () => {
 
   return (
     <AddButton
-      openModal={openModal}
       onClickButton={onClickButton}
       active={true}
       size="5rem"

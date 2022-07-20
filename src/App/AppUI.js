@@ -22,7 +22,6 @@ const AppUI = () => {
     deleteTodo,
     searchTodos,
     openModal,
-    setOpenModal,
   } = React.useContext(TodoContext);
 
   return (

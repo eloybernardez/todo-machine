@@ -10,7 +10,7 @@ const StyledButton = styled.button`
   height: ${(props) => props.size};
   font-size: ${(props) => props.font};
   border-radius: 50%;
-  cursor: pointer;
+  cursor: ${(props) => (props.active ? "pointer" : "default")};
   background-color: #16c60c;
   border: none;
   color: white;
@@ -38,7 +38,6 @@ const PlusSign = styled.div`
 
   transform: ${(props) =>
     props.openModal && props.active ? "rotateZ(135deg)" : "rotateZ(0deg)"};
-  transform-origin: center;
 `;
 
 function AddButton({ active, onClickButton, size, font }) {
