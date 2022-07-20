@@ -10,7 +10,7 @@ const StyledButton = styled.button`
   background-color: #16c60c;
   border: none;
   color: white;
-  padding: 0.4rem 1rem 2.3rem;
+  padding-top: 0.35rem;
   justify-self: flex-end;
   align-self: flex-end;
   margin-right: 1rem;

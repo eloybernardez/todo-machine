@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBatteryEmpty } from "@fortawesome/free-solid-svg-icons";
+import { faFolderPlus } from "@fortawesome/free-solid-svg-icons";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -19,7 +19,7 @@ const StyledButton = styled.button`
   background-color: #16c60c;
   border: none;
   color: white;
-  padding: 0.65rem 1rem 2.1rem;
+  padding-top: 0.35rem;
   justify-self: flex-end;
   align-self: flex-end;
   margin-right: 1rem;
@@ -36,7 +36,13 @@ const StyledContainer = styled.div`
 
 const StyledH3 = styled.h3`
   color: black;
+  font-size: 1.9rem;
   margin-bottom: 1rem;
+  text-align: center;
+
+  @media (max-width: 425px) {
+    width: 90%;
+  }
 `;
 
 const StyledText = styled.p`
@@ -48,12 +54,12 @@ function EmptyState() {
   return (
     <StyledDiv>
       <FontAwesomeIcon
-        icon={faBatteryEmpty}
+        icon={faFolderPlus}
         transform="down-3"
         size="5x"
-        color="grey"
+        color="#16c60c"
       />
-      <StyledH3>¡Organiza tus TODO's aquí mismo! 🤘</StyledH3>
+      <StyledH3>¡Organiza tus TODO's aquí! 🤘</StyledH3>
       <StyledContainer>
         <StyledText>Agrégalos usando</StyledText>
         <StyledButton>+</StyledButton>
