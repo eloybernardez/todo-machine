@@ -33,7 +33,7 @@ const StyledDiv = styled.div`
 `;
 
 const StyledText = styled.div`
-  width: 30rem;
+  width: 40%;
   height: 2rem;
   background-color: grey;
   animation: ${swap} 1.5s linear infinite;

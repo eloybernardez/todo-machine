@@ -43,10 +43,16 @@ const StyledButton = styled.button`
   padding: 1rem 2.6rem;
   background-color: ${(props) => (props.primary ? "#16c60c" : "#f03a17")};
   color: white;
+  width: 45%;
+  text-align: center;
   border-radius: 0.8rem;
   border: none;
   font-weight: bold;
   cursor: pointer;
+
+  @media screen and (max-width: 600px) {
+    margin-right: 1rem;
+  }
 `;
 
 function TodoForm() {

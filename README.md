@@ -11,6 +11,8 @@ A TODO's App with basic functionalities:
 
 - HTML5
 - CSS3
+- Responsive Design
+- Styled Components
 - JS
 - React
 - React Hooks

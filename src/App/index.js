@@ -18,7 +18,7 @@ const StyledMain = styled.main`
   background-color: #14213d;
   border-radius: 1.3rem;
 
-  @media (max-width: 700px) {
+  @media (max-width: 600px) {
     width: 100%;
   }
 `;
