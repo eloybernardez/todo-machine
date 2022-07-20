@@ -53,7 +53,7 @@ const AppUI = () => {
         </Modal>
       )}
 
-      <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal} />
+      <CreateTodoButton />
     </>
   );
 };
