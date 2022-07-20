@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# TODO Machine
 
 A TODO's App with basic functionalities:
 
