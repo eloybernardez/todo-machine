@@ -14,6 +14,8 @@ const CreateTodoButton = () => {
       openModal={openModal}
       onClickButton={onClickButton}
       active={true}
+      size="5rem"
+      font="4rem"
     />
   );
 };

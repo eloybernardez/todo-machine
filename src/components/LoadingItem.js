@@ -6,6 +6,7 @@ const StyledItem = styled.li`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  border-radius: 1.3rem;
   background-color: white;
   opacity: 0.3;
 `;
