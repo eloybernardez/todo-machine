@@ -13,6 +13,12 @@ const StyledInput = styled.input`
   }
 `;
 
+const StyledContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`;
+
 const TodoSearch = ({ searchValue, setSearchValue }) => {
   const onSearchValueChange = (event) => {
     // ver si en props.text figura el valor del input
@@ -20,11 +26,13 @@ const TodoSearch = ({ searchValue, setSearchValue }) => {
   };
 
   return (
-    <StyledInput
-      placeholder="Cebolla"
-      onChange={onSearchValueChange}
-      value={searchValue}
-    />
+    <StyledContainer>
+      <StyledInput
+        placeholder="Cebolla"
+        onChange={onSearchValueChange}
+        value={searchValue}
+      />
+    </StyledContainer>
   );
 };
 

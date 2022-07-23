@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import { useLocalStorage } from "./useLocalStorage";
 
 // Al crear el contexto también podemos pasarle un valor inicial entre los paréntesis
 // const TodoContext = React.createContext();

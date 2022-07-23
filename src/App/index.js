@@ -14,7 +14,7 @@ import { TodoForm } from "../containers/TodoForm";
 import { LoadingState } from "./LoadingState";
 import { EmptyState } from "./EmptyState";
 import { ErrorState } from "./ErrorState";
-import { useTodos } from "../context/Context";
+import { useTodos } from "../hooks/useTodos";
 
 {
   /* a las components les pasamos PROPIEDADES (PROPS), no parametros. Los atributos que les damos a las etiquetas de HTML no pueden modificarse pero las propiedades sí*/
