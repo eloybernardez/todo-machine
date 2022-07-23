@@ -27,7 +27,7 @@ function ErrorState() {
       <StyledTitle>Parece que no encontramos sus TODO's pendientes</StyledTitle>
 
       <StyledText>
-        💡 Prueba recargando la página o intentándo acceder más tarde
+        💡 Prueba recargando la página o intentando acceder más tarde
       </StyledText>
     </>
   );

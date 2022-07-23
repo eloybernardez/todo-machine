@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { TodoContext } from "../context/Context";
 
 const StyledInput = styled.input`
   width: 20rem;
@@ -14,9 +13,7 @@ const StyledInput = styled.input`
   }
 `;
 
-const TodoSearch = () => {
-  const { searchValue, setSearchValue } = React.useContext(TodoContext);
-
+const TodoSearch = ({ searchValue, setSearchValue }) => {
   const onSearchValueChange = (event) => {
     // ver si en props.text figura el valor del input
     setSearchValue(event.target.value);

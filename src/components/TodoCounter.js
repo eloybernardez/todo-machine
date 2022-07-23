@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { TodoContext } from "../context/Context";
 
 const StyledH2 = styled.h2`
   text-align: center;
@@ -13,8 +12,7 @@ const StyledH2 = styled.h2`
   }
 `;
 
-const TodoCounter = () => {
-  const { completedTodos, totalTodos } = React.useContext(TodoContext);
+const TodoCounter = ({ completedTodos, totalTodos }) => {
   return (
     <StyledH2>
       Has completado {completedTodos} de {totalTodos} TODO's

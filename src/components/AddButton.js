@@ -1,5 +1,4 @@
 import React from "react";
-import { TodoContext } from "../context/Context";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
@@ -40,15 +39,17 @@ const PlusSign = styled.div`
     props.openModal && props.active ? "rotateZ(135deg)" : "rotateZ(0deg)"};
 `;
 
-function AddButton({ active, onClickButton, size, font }) {
-  const { openModal } = React.useContext(TodoContext);
+function AddButton({ openModal, setOpenModal, active, size, font }) {
+  const onClickButton = () => {
+    setOpenModal((prevState) => !prevState);
+  };
   return (
     <StyledButton
       openModal={openModal}
-      onClick={onClickButton}
       active={active}
       size={size}
       font={font}
+      onClick={onClickButton}
     >
       <PlusSign openModal={openModal} active={active}>
         +

@@ -2,7 +2,7 @@ import React from "react";
 
 function useLocalStorage(itemName, initialValue) {
   const [loading, setLoading] = React.useState(true);
-  // ¡Podemos utilizar otros hooks!
+
   const [item, setItem] = React.useState(initialValue);
   const [error, setError] = React.useState(false);
 
@@ -26,7 +26,7 @@ function useLocalStorage(itemName, initialValue) {
       } catch (error) {
         setError(error);
       }
-    }, 2000);
+    }, 1000);
   }, []);
 
   // Actualizamos la función para guardar nuestro item con las nuevas variables y parámetros

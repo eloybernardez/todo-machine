@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { TodoContext } from "../context/Context";
 
 const StyledForm = styled.form`
   display: flex;
@@ -55,9 +54,8 @@ const StyledButton = styled.button`
   }
 `;
 
-function TodoForm() {
+function TodoForm({ addTodo, setOpenModal }) {
   const [newTodoValue, setNewTodoValue] = React.useState("");
-  const { addTodo, setOpenModal } = React.useContext(TodoContext);
 
   const onChange = (event) => {
     setNewTodoValue(event.target.value);
