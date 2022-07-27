@@ -16,7 +16,7 @@ import { EmptyState } from "./EmptyState";
 import { ErrorState } from "./ErrorState";
 import { EmptySearchResults } from "./EmptySearchResults";
 import { useTodos } from "../hooks/useTodos";
-import { ChangeAlertWithStorageListener } from "./ChangeAlert";
+import { ChangeAlert } from "./ChangeAlert";
 
 {
   /* a las components les pasamos PROPIEDADES (PROPS), no parametros. Los atributos que les damos a las etiquetas de HTML no pueden modificarse pero las propiedades sí*/
@@ -54,7 +54,6 @@ function App() {
     addTodo,
     sincronizeTodos,
   } = useTodos();
-  const [onModal, setOnModal] = React.useState(false);
 
   return (
     <StyledMain>
@@ -112,7 +111,7 @@ function App() {
         />
       </CreateTodoButton>
 
-      <ChangeAlertWithStorageListener sincronize={sincronizeTodos} />
+      <ChangeAlert sincronize={sincronizeTodos} />
     </StyledMain>
   );
 }

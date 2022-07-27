@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { withStorageListener } from "./withStorageListener";
+import { useStorageListener } from "../hooks/useStorageListener";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 
@@ -52,7 +52,8 @@ const StyledButton = styled.button`
   }
 `;
 
-function ChangeAlert({ show, toggleShow }) {
+function ChangeAlert({ sincronize }) {
+  const { show, toggleShow } = useStorageListener({ sincronize });
   if (show) {
     return (
       <>
@@ -80,6 +81,4 @@ function ChangeAlert({ show, toggleShow }) {
   }
 }
 
-const ChangeAlertWithStorageListener = withStorageListener(ChangeAlert);
-
-export { ChangeAlertWithStorageListener };
+export { ChangeAlert };
