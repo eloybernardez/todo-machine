@@ -15,10 +15,21 @@ const StyledSection = styled.section`
 `;
 
 const TodoList = (props) => {
+  const renderFunction = props.render || props.children;
   return (
     <>
       <StyledSection>
-        <StyledUl>{props.children}</StyledUl>
+        <StyledUl>
+          {props.error && props.onError()}
+          {props.loading && props.onLoading()}
+          {!props.loading &&
+            props.todos.length &&
+            props.todos.map(renderFunction)}
+          {!props.loading &&
+            !props.todos.length &&
+            props.onEmptySearchResults()}
+          {/* acá podemos evitar llamar a dos funciones haciendo .map(props.render) */}
+        </StyledUl>
       </StyledSection>
     </>
   );

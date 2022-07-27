@@ -10,6 +10,7 @@ function useTodos() {
   const {
     item: todos,
     saveItem: saveTodos,
+    sincronizeItem: sincronizeTodos,
     loading,
     error,
   } = useLocalStorage("TODOS_V1", []);
@@ -38,7 +39,7 @@ function useTodos() {
 
   const deleteTodo = (text) => {
     const todoIndex = todos.findIndex((todo) => todo.text === text);
-    const newTodos = todos.filter((todo, index) => index !== todoIndex); // alternativa usar, todos.splice(todoIndex,1)
+    const newTodos = todos.filter((_, index) => index !== todoIndex); // alternativa usar, todos.splice(todoIndex,1)
     saveTodos(newTodos); // para re-renderizar el array de todos
   };
 
@@ -61,6 +62,7 @@ function useTodos() {
     addTodo,
     openModal,
     setOpenModal,
+    sincronizeTodos,
   };
 }
 // Exportamos nuestro proveedor y nuestro contexto, en el context también esta el consumer, para acceder a nuestro contexto

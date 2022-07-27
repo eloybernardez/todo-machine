@@ -11,6 +11,10 @@ const StyledInput = styled.input`
   &:focus {
     outline: 0.2rem solid #fca311;
   }
+
+  &:disabled {
+    opacity: 25%;
+  }
 `;
 
 const StyledContainer = styled.div`
@@ -19,7 +23,7 @@ const StyledContainer = styled.div`
   width: 100%;
 `;
 
-const TodoSearch = ({ searchValue, setSearchValue }) => {
+const TodoSearch = ({ searchValue, setSearchValue, loading }) => {
   const onSearchValueChange = (event) => {
     // ver si en props.text figura el valor del input
     setSearchValue(event.target.value);
@@ -31,6 +35,7 @@ const TodoSearch = ({ searchValue, setSearchValue }) => {
         placeholder="Cebolla"
         onChange={onSearchValueChange}
         value={searchValue}
+        disabled={loading}
       />
     </StyledContainer>
   );

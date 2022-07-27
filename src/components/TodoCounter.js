@@ -6,15 +6,16 @@ const StyledH2 = styled.h2`
   font-size: 3rem;
   font-weight: bold;
   color: #ffffff;
+  opacity: ${(props) => (props.loading ? "25%" : "100%")};
 
   @media (max-width: 700px) {
     padding: 1rem;
   }
 `;
 
-const TodoCounter = ({ completedTodos, totalTodos }) => {
+const TodoCounter = ({ completedTodos, totalTodos, loading }) => {
   return (
-    <StyledH2>
+    <StyledH2 loading={loading}>
       Has completado {completedTodos} de {totalTodos} TODO's
     </StyledH2>
   );

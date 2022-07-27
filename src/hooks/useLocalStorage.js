@@ -2,6 +2,7 @@ import React from "react";
 
 function useLocalStorage(itemName, initialValue) {
   const [loading, setLoading] = React.useState(true);
+  const [sincronizedItem, setSincronizedItem] = React.useState(true);
 
   const [item, setItem] = React.useState(initialValue);
   const [error, setError] = React.useState(false);
@@ -23,11 +24,12 @@ function useLocalStorage(itemName, initialValue) {
 
         setItem(parsedItem);
         setLoading(false);
+        setSincronizedItem(true);
       } catch (error) {
         setError(error);
       }
     }, 1000);
-  }, []);
+  }, [sincronizedItem]);
 
   // Actualizamos la función para guardar nuestro item con las nuevas variables y parámetros
   const saveItem = (newItem) => {
@@ -40,8 +42,13 @@ function useLocalStorage(itemName, initialValue) {
     }
   };
 
+  const sincronizeItem = () => {
+    setLoading(true);
+    setSincronizedItem(false);
+  };
+
   // Regresamos los datos que necesitamos
-  return { item, saveItem, loading, error };
+  return { item, saveItem, loading, error, sincronizeItem };
 }
 
 export { useLocalStorage };

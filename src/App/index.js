@@ -14,7 +14,9 @@ import { TodoForm } from "../containers/TodoForm";
 import { LoadingState } from "./LoadingState";
 import { EmptyState } from "./EmptyState";
 import { ErrorState } from "./ErrorState";
+import { EmptySearchResults } from "./EmptySearchResults";
 import { useTodos } from "../hooks/useTodos";
+import { ChangeAlertWithStorageListener } from "./ChangeAlert";
 
 {
   /* a las components les pasamos PROPIEDADES (PROPS), no parametros. Los atributos que les damos a las etiquetas de HTML no pueden modificarse pero las propiedades sí*/
@@ -24,6 +26,7 @@ const StyledMain = styled.main`
   display: flex;
   align-items: center;
   flex-direction: column;
+  transform: translate(0, 25%);
   width: 50%;
   margin: 0 auto;
   background-color: #14213d;
@@ -49,33 +52,48 @@ function App() {
     openModal,
     setOpenModal,
     addTodo,
+    sincronizeTodos,
   } = useTodos();
+  const [onModal, setOnModal] = React.useState(false);
+
   return (
     <StyledMain>
       <GlobalStyle />
 
-      <TodoHeader>
+      <TodoHeader loading={loading}>
         <TodoCounter completedTodos={completedTodos} totalTodos={totalTodos} />
 
         <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       </TodoHeader>
 
-      {/* Podemos acceder a nuestro contexto con el consumer */}
-      <TodoList>
-        {error && <ErrorState />}
-
-        {loading && <LoadingState />}
-
-        {!loading && !searchTodos(searchValue).length && <EmptyState />}
-
-        {(searchValue ? searchTodos(searchValue) : todos).map((todo) => (
+      <TodoList
+        error={error}
+        loading={loading}
+        todos={searchValue ? searchTodos(searchValue) : todos}
+        onError={() => <ErrorState />}
+        onLoading={() => <LoadingState />}
+        onEmptyTodos={() => <EmptyState />}
+        onEmptySearchResults={() => (
+          <EmptySearchResults searchValue={searchValue} />
+        )}
+        // render prop: render={(todo) => (
+        //   <TodoItem
+        //     key={todo.text}
+        //     todo={todo}
+        //     onComplete={() => completeTodo(todo.text)}
+        //     onDelete={() => deleteTodo(todo.text)}
+        //   />
+        // )}
+      >
+        {/* render function: */}
+        {(todo) => (
           <TodoItem
             key={todo.text}
             todo={todo}
             onComplete={() => completeTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
           />
-        ))}
+        )}
       </TodoList>
 
       {openModal && (
@@ -93,6 +111,8 @@ function App() {
           font="4rem"
         />
       </CreateTodoButton>
+
+      <ChangeAlertWithStorageListener sincronize={sincronizeTodos} />
     </StyledMain>
   );
 }
