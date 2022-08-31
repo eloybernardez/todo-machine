@@ -64,13 +64,13 @@ function ChangeAlert({ sincronize }) {
               size="9x"
               color="#fca311"
             />
-            <StyledText>Hubo cambios en sus TODO's</StyledText>
+            <StyledText>There were changes on your TODOS</StyledText>
             <StyledButton
               onClick={() => {
                 toggleShow();
               }}
             >
-              Actualizar información
+              Update TODOS
             </StyledButton>
           </StyledModified>
         </StyledSection>

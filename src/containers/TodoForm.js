@@ -76,16 +76,16 @@ function TodoForm({ addTodo, setOpenModal }) {
     <StyledForm onSubmit={onSubmit}>
       <StyledLabel>Añade tu nuevo TODO</StyledLabel>
       <StyledTextarea
-        placeholder="Cortar la cebolla para el almuerzo"
+        placeholder="Buy milk and eggs"
         value={newTodoValue}
         onChange={(event) => onChange(event)}
       />
       <StyledButtonContainer>
         <StyledButton type="button" onClick={onCancel}>
-          Cancelar
+          Cancel
         </StyledButton>
         <StyledButton primary type="submit">
-          Añadir
+          Add
         </StyledButton>
       </StyledButtonContainer>
     </StyledForm>

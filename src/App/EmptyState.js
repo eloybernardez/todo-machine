@@ -44,9 +44,9 @@ function EmptyState() {
         size="5x"
         color="#16c60c"
       />
-      <StyledH3>¡Organiza tus TODO's aquí! 🤘</StyledH3>
+      <StyledH3>Organize your TODOS here! 🤘</StyledH3>
       <StyledContainer>
-        <StyledText>Agrégalos usando</StyledText>
+        <StyledText>Add them using </StyledText>
         <AddButton active={false} size="3.5rem" font="3rem" />
       </StyledContainer>
     </StyledDiv>

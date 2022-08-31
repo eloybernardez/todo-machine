@@ -44,12 +44,12 @@ function EmptySearchResults({ searchValue }) {
     <StyledDiv>
       <FontAwesomeIcon icon={faBatteryEmpty} size="5x" color="#f03a17" />
       <StyledH3>
-        Parece que no hay TODO's que encajen con "
+        It seems there are no TODOS with the search value "
         <StyledSearchValue>{searchValue}</StyledSearchValue>" 🤔
       </StyledH3>
       <StyledContainer>
         <StyledText>
-          💡 Prueba buscando algo relacionado a tus TODO's
+          💡 Try searching something related to your TODOS.
         </StyledText>
       </StyledContainer>
     </StyledDiv>

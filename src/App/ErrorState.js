@@ -24,11 +24,9 @@ function ErrorState() {
         color="red"
         transform="down-4 right-50%"
       />
-      <StyledTitle>Parece que no encontramos sus TODO's pendientes</StyledTitle>
+      <StyledTitle>We can't find your TODOS 😱</StyledTitle>
 
-      <StyledText>
-        💡 Prueba recargando la página o intentando acceder más tarde
-      </StyledText>
+      <StyledText>💡 Try reloading the page or accesing later.</StyledText>
     </>
   );
 }

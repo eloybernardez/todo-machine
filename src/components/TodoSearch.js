@@ -32,7 +32,7 @@ const TodoSearch = ({ searchValue, setSearchValue, loading }) => {
   return (
     <StyledContainer>
       <StyledInput
-        placeholder="Cebolla"
+        placeholder="Search TODOS here..."
         onChange={onSearchValueChange}
         value={searchValue}
         disabled={loading}
