@@ -16,7 +16,7 @@ const StyledH2 = styled.h2`
 const TodoCounter = ({ completedTodos, totalTodos, loading }) => {
   return (
     <StyledH2 loading={loading}>
-      Has completado {completedTodos} de {totalTodos} TODO's
+      You have completed {completedTodos} of {totalTodos} TODO's
     </StyledH2>
   );
 };
