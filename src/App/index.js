@@ -18,10 +18,6 @@ import { EmptySearchResults } from "./EmptySearchResults";
 import { useTodos } from "../hooks/useTodos";
 import { ChangeAlert } from "./ChangeAlert";
 
-{
-  /* a las components les pasamos PROPIEDADES (PROPS), no parametros. Los atributos que les damos a las etiquetas de HTML no pueden modificarse pero las propiedades sí*/
-}
-
 const StyledMain = styled.main`
   display: flex;
   align-items: center;
